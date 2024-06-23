@@ -20,6 +20,7 @@ kotlin {
         iosSimulatorArm64()
     ).forEach { iosTarget ->
         iosTarget.binaries.framework {
+            export(libs.androidx.lifecycle.viewmodel)
             baseName = "Shared"
             isStatic = true
         }
@@ -28,6 +29,13 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             // put your Multiplatform dependencies here
+            api(libs.androidx.lifecycle.viewmodel)
+
+            api(libs.koin.core)
+            implementation(libs.koin.compose)
+            implementation(libs.koin.composeVM)
+
+            api(libs.nappier)
         }
     }
 }

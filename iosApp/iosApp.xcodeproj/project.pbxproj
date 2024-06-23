@@ -10,6 +10,8 @@
 		058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557BA273AAA24004C7B11 /* Assets.xcassets */; };
 		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
+		36FB0011DDD047365A2914E2 /* SharedViewModelStoreOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FB0A7602CF9AB802A7290E /* SharedViewModelStoreOwner.swift */; };
+		36FB0CD333D21FAE697FCC4E /* CalculatorButtonrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FB02B26B9FA374A7E9CB53 /* CalculatorButtonrow.swift */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
@@ -17,6 +19,8 @@
 		058557BA273AAA24004C7B11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2152FB032600AC8F00CF470E /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
+		36FB02B26B9FA374A7E9CB53 /* CalculatorButtonrow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorButtonrow.swift; sourceTree = "<group>"; };
+		36FB0A7602CF9AB802A7290E /* SharedViewModelStoreOwner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedViewModelStoreOwner.swift; sourceTree = "<group>"; };
 		7555FF7B242A565900829871 /* CalculatorApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalculatorApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -40,6 +44,22 @@
 				058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		36FB08941F51775FE776D309 /* uiComponent */ = {
+			isa = PBXGroup;
+			children = (
+				36FB02B26B9FA374A7E9CB53 /* CalculatorButtonrow.swift */,
+			);
+			path = uiComponent;
+			sourceTree = "<group>";
+		};
+		36FB0D613DADA31AAD072601 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				36FB0A7602CF9AB802A7290E /* SharedViewModelStoreOwner.swift */,
+			);
+			path = viewModel;
 			sourceTree = "<group>";
 		};
 		42799AB246E5F90AF97AA0EF /* Frameworks */ = {
@@ -75,6 +95,8 @@
 				7555FF8C242A565B00829871 /* Info.plist */,
 				2152FB032600AC8F00CF470E /* iOSApp.swift */,
 				058557D7273AAEEB004C7B11 /* Preview Content */,
+				36FB08941F51775FE776D309 /* uiComponent */,
+				36FB0D613DADA31AAD072601 /* viewModel */,
 			);
 			path = iosApp;
 			sourceTree = "<group>";
@@ -186,6 +208,8 @@
 			files = (
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
+				36FB0CD333D21FAE697FCC4E /* CalculatorButtonrow.swift in Sources */,
+				36FB0011DDD047365A2914E2 /* SharedViewModelStoreOwner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

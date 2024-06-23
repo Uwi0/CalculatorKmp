@@ -2,29 +2,26 @@ import SwiftUI
 import Shared
 
 struct ContentView: View {
-    @State private var showContent = false
+    let rows = Buttons()
+
+    @StateObject var viewModelStoreOwner = SharedViewModelStoreOwner<CalculatorViewModel>()
+    @State private var displayText: String = "0"
+    @State private var viewModel = CalculatorViewModel()
+
     var body: some View {
         VStack {
-            Button("Click me!") {
-                withAnimation {
-                    showContent = !showContent
+            Text(viewModel.uiState.value).font(.system(size: 80))
+            Spacer(minLength: 24)
+            ForEach(rows.buttons, id: \.self) { row in
+                CalculatorButtonRow(buttons: row) { buttonTitle in
+                    viewModel.onClicked(button: buttonTitle)
                 }
             }
 
-            if showContent {
-                VStack(spacing: 16) {
-                    Image(systemName: "swift")
-                        .font(.system(size: 200))
-                        .foregroundColor(.accentColor)
-                    Text("SwiftUI: \(Greeting().greet())")
-                }
-                .transition(.move(edge: .top).combined(with: .opacity))
-            }
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-        .padding()
+        }.padding()
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
