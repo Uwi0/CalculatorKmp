@@ -10,7 +10,7 @@ import org.koin.core.component.KoinComponent
 open class CalculatorViewModel: ViewModel(), KoinComponent {
     
     val uiState: StateFlow<String> get() = _uiState.asStateFlow()
-    private val _uiState: MutableStateFlow<String> = MutableStateFlow("")
+    private val _uiState: MutableStateFlow<String> = MutableStateFlow("0")
     
     fun onClicked(button: String) {
         Napier.d("onclicked button $button")
