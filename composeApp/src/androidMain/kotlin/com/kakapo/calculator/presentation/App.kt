@@ -1,3 +1,4 @@
+import android.util.Log
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
@@ -31,17 +32,20 @@ private fun CalculatorScreen() {
     val configuration = LocalConfiguration.current
     val uiState by viewModel.uiState.collectAsState()
     val screenWidth = (configuration.screenWidthDp - 5 * 12) / 4
+
     Column(
         modifier = Modifier.fillMaxSize().padding(bottom = 24.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         val buttons = Buttons()
+
         Spacer(Modifier.weight(1f))
-        Text(modifier = Modifier.align(Alignment.End).padding(end = 12.dp),text = uiState, style = MaterialTheme.typography.h3)
+        Text(modifier = Modifier.align(Alignment.End).padding(end = 12.dp), text = uiState, style = MaterialTheme.typography.h3)
         Spacer(modifier = Modifier.size(12.dp))
         buttons.buttons.forEach { column ->
             CalculatorButtonRow(screenWidth.dp,column) {
+                Log.d("ButtonClicked", "CalculatorScreen: $it")
                 viewModel.onClicked(it)
             }
         }
@@ -52,7 +56,7 @@ private fun CalculatorScreen() {
 private fun CalculatorButtonRow(size: Dp,buttons: List<String>, onClick: (String) -> Unit) {
     Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
         buttons.forEach { title ->
-            CalculatorButton(size,title, onClick)
+            CalculatorButton(size, title, onClick)
         }
     }
 }
