@@ -2,9 +2,10 @@ import SwiftUI
 import Shared
 
 class ObservableCalculatorViewModel: ObservableObject {
-    private var viewModel: CalculatorSharedViewModel
-    
+
     @Published var state: String = "0"
+
+    private var viewModel: CalculatorSharedViewModel
     
     init() {
         self.viewModel = CalculatorSharedViewModel()
