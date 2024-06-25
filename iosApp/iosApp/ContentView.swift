@@ -4,7 +4,6 @@ import Shared
 struct ContentView: View {
     let buttons = Buttons()
     @StateObject private var viewModel = ObservableCalculatorViewModel()
-    private let screenWidth = UIScreen.main.bounds.width - 5 * 12
 
     var body: some View {
         VStack(alignment: .trailing) {
@@ -20,7 +19,7 @@ struct ContentView: View {
                 HStack {
                     ForEach(columns, id: \.self) { rows in
                         CalculatorButton(buttonLable: rows) { title in
-                            
+                            viewModel.updateState(newState: title)
                         }
                     }
                 }

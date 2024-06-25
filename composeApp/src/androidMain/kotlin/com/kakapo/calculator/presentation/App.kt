@@ -45,8 +45,7 @@ private fun CalculatorScreen() {
         Spacer(modifier = Modifier.size(12.dp))
         buttons.buttons.forEach { column ->
             CalculatorButtonRow(screenWidth.dp,column) {
-                Log.d("ButtonClicked", "CalculatorScreen: $it")
-                viewModel.onClicked(it)
+                viewModel.onButtonPress(it)
             }
         }
     }

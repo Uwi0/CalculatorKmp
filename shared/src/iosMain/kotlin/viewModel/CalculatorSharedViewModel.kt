@@ -11,7 +11,7 @@ class CalculatorSharedViewModel {
     val state: String get() = viewModel.uiState.value
     
     fun onClick(title: String) {
-        viewModel.onClicked(title)
+        viewModel.onButtonPress(title)
     }
     
     fun observeState(onStateChange: (String) -> Unit){
