@@ -9,12 +9,18 @@ struct ContentView: View {
     var body: some View {
         VStack(alignment: .trailing) {
             Spacer()
-            Text(viewModel.state).font(.system(size: 80))
+            Text(viewModel.state)
+                .font(.largeTitle)
+                .padding()
+                .frame(maxWidth: .infinity, alignment: .trailing)
+                .background(Color.black)
+                .foregroundColor(.white)
+
             ForEach(buttons.buttons, id: \.self) { columns in
                 HStack {
                     ForEach(columns, id: \.self) { rows in
                         CalculatorButton(buttonLable: rows) { title in
-
+                            
                         }
                     }
                 }
@@ -22,6 +28,7 @@ struct ContentView: View {
 
         }
         .padding()
+        .background(Color.black.edgesIgnoringSafeArea(.all))
     }
 }
 
